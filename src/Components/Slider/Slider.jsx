@@ -18,7 +18,16 @@ const Slider = () => {
         getSlider()
     },[])
   return (
-    <div>Slider</div>
+    <>
+    {
+        Array.isArray(data) && data.map((slider)=>(
+            <>
+           
+            <p dangerouslySetInnerHTML={{ __html: slider.excerpt.rendered }} />
+            </>
+        ))
+    }
+    </>
   )
 }
 
