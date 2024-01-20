@@ -25,7 +25,7 @@ const Slider = () => {
    {
     Array.isArray(data) && data.map((slider)=>(
         <>
-        <div className='col-lg-6 col-md-12'>
+        <div className='col-lg-6 col-md-12' key={slider.id}>
             <div>
        <div dangerouslySetInnerHTML={{ __html: slider.content.rendered }} />
        </div>
