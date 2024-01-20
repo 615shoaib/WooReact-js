@@ -4,6 +4,100 @@
     align-items: left;
     justify-content: center;
 }
+section{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100vw;
+        height: 600px;
+     background-color: #68666613;
+  
+}
+.elementor-heading-title.elementor-size-default{
+    font-size: 0.7em;
+    line-height: 17px;
+    text-transform: uppercase;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    color: rgb(153, 153, 153);
+    padding:10px 152px;
+    position: absolute;
+    top: 25%;
+    margin-left: -122px;
+}
+h2{
+    /* font-family: inherit !important; */
+    font-size: 34px !important;
+    color: #222222 !important;
+    width: 55% !important;
+    /* font-weight: 300 !important; */
+    white-space: pre-wrap;
+    text-transform: uppercase;
+    line-height: 44px !important;
+    letter-spacing: 5.22px;
+    position: absolute !important;
+    top: 30% !important;
+    margin-left: 0 !important;
+
+    
+}
+.elementor-widget-container p {
+    font-size: 13px;
+    line-height: 19px;
+    padding: 10px 150px; 
+    width: 50%;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    /* margin-top: 40%; */
+    display: flex;
+    top: 45%;
+    position: absolute;
+    justify-content: center;
+    color: #B3B3B3;
+    opacity: 0; /* Start with opacity 0 to make it fade in */
+    animation: animateText 0.5s ease forwards; /* Adjust the animation duration as needed */
+}
+
+@keyframes animateText {
+    0% {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+p p{
+    display: none;
+}
+.elementor-button-text{
+    /* padding: 10px 150px; */
+    width: 220px;
+    height: 40px;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 12px 15px 12px 35px;
+    margin-left: 152px;
+    background-color: #4D4D4D;
+   font-family: 'Roboto', sans-serif;
+    position: absolute;
+    top: 55%;
+}
+.swiper-slide-image{
+    width: 350px;
+    margin-left: 450%;
+    /* height: 600px !important; */
+    /* padding: 10px 150px; */
+    margin-top: 95px !important;
+    height: 550px !important;
+    margin-top: 25%;
+   
+}
 .demo{
     display: flex;
     justify-content: center;
