@@ -3,9 +3,11 @@ import React from 'react';
 import Menu from './Menu';
 import Cart from './Cart';
 import "./Index.css"
+import Slider from './Slider/Slider';
 
 const Sidebar = ({ drawerZIndex }) => {
     return (
+        <div className='d-flex'>
         <div  id="sidebar" className="d-flex justify-content-between align-items-center flex-column flex-shrink-0 border p-3 pt-0 text-white bg-white " 
             style={{ width: "90px", height: "100vh", overflow: "hidden", zIndex: drawerZIndex }}>
             <a href="/" className="mx-2">
@@ -17,6 +19,8 @@ const Sidebar = ({ drawerZIndex }) => {
             </a>
             <Menu />
             <Cart />
+        </div>
+        <Slider />
         </div>
     );
 }

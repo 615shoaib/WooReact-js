@@ -40,6 +40,7 @@ const Navbar = () => {
                 open={isOpen}
                 onClose={handleDrawerClose}
                 hideBackdrop={false}
+                aria-hidden={true}
                sx={{
                 display:"flex",
                 alignItems:"center",
