@@ -48,7 +48,7 @@ const Navbar = () => {
             >
                 <Box
                     sx={{
-                        width: '300px',
+                        width: '250px',
                         zIndex: 1, 
                         
                         
@@ -60,9 +60,11 @@ const Navbar = () => {
                                 data.map((pages, p) => (
                                     <div className='d-flex alignItems-center demo' key={p}>
                                         <ul>
-                                            <Link style={{ justifyContent: 'center', textDecoration: 'none', color: '#000' }}>
+                                            <li>
+                                            <Link>
                                                 {pages.title.rendered}
                                             </Link>
+                                            </li>
                                         </ul>
                                     </div>
                                 ))}
