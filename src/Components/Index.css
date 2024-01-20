@@ -27,16 +27,3 @@ li{
     
 
 } 
-.attachment-large{
-   
-    /* width: 850px; */
-    
-    padding-left: 150px;
-    height: 600px;
-}
-.elementor-widget-container p{
-    display: none !important;
-}
-.elementor-heading-title{
-    display: none;
-}
