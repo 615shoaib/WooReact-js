@@ -7,7 +7,8 @@ const Slider = () => {
     const [data,setData]=useState([])
 
     const getUser=async()=>{
-        const d = await axios.get("http://localhost/wordpress/wp-json/wp/v2/pages")
+        const WordpressUrl = process.env.Url
+        const d = await axios.get(WordpressUrl/pages)
         console.log(d.data)
         setData(d.data)
     }
@@ -25,7 +26,7 @@ const Slider = () => {
    {
     Array.isArray(data) && data.map((slider)=>(
         <>
-        <div className='col-lg-6 col-md-12' key={slider.id}>
+        {/* <div className='col-lg-6 col-md-12' key={slider.id}>
             <div>
        <div dangerouslySetInnerHTML={{ __html: slider.content.rendered }} />
        </div>
@@ -33,7 +34,10 @@ const Slider = () => {
        <div>
         
        </div>
-       </div>
+       </div> */}
+        <div key={slider.id} >
+            <div dangerouslySetInnerHTML={{ __html: slider.content.rendered }}/>
+        </div>
         </>
     ))
    }
