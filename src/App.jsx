@@ -1,14 +1,13 @@
-import Sidebar from "./Components/Sidebar"
-
-import WooCommerceExample from "./Products/WoocommerceApi"
+import WordpressPages from "./WorpdressPages/WordpressPages"
+import ProductsPages from "./ProductsPages/ProductsPages"
 
 
 function App() {
  return (
     <>
     <div className="">
-    <Sidebar />
-    <WooCommerceExample />
+    <WordpressPages />
+    <ProductsPages />
     </div>
     </>
   )

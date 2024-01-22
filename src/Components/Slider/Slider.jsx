@@ -20,8 +20,9 @@ const Slider = () => {
   }, []);
 
   return (
+    <section>
     <Carousel>
-      {pages.map((page) => (
+      {/* {pages.map((page) => (
         <Carousel.Item key={page.id}>
           <div
             className="n2-section-smartslider fitvidsignore n2_clear"
@@ -32,8 +33,9 @@ const Slider = () => {
             dangerouslySetInnerHTML={{ __html: page.content.rendered }}
           />
         </Carousel.Item>
-      ))}
+      ))} */}
     </Carousel>
+    </section>
   );
 };
 

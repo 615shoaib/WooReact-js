@@ -3,7 +3,7 @@ import React from 'react';
 import Menu from './Menu';
 import Cart from './Cart';
 import "./Index.css"
-import Sliders from './Slider/Slider';
+
 
 const Sidebar = ({ drawerZIndex }) => {
     return (
@@ -20,7 +20,7 @@ const Sidebar = ({ drawerZIndex }) => {
             <Menu />
             <Cart />
         </div>
-        <Sliders />
+      
         </div>
     );
 }
