@@ -1,51 +1,40 @@
-
-
-import axios from 'axios'
-import React, { useEffect, useState } from 'react'
+import React, { useState, useEffect } from 'react';
+import { Carousel } from 'react-bootstrap';
+import axios from 'axios';
 
 const Slider = () => {
-    const [data,setData]=useState([])
+  const [pages, setPages] = useState([]);
 
-    const getUser=async()=>{
-        const WordpressUrl = process.env.Url
-        const d = await axios.get(WordpressUrl/pages)
-        console.log(d.data)
-        setData(d.data)
-    }
+  useEffect(() => {
+    const fetchPages = async () => {
+      try {
+        const response = await axios.get('http://localhost/wordpress/wp-json/wp/v2/pages');
+        setPages(response.data);
+        console.log(response.data)
+      } catch (error) {
+        console.error('Error fetching pages:', error);
+      }
+    };
 
-    useEffect(()=>{
-        getUser()
-    },[])
+    fetchPages();
+  }, []);
+
   return (
-   <>
-   <section>
-   <div className='container'>
-    <div className='row'>
-        
-    
-   {
-    Array.isArray(data) && data.map((slider)=>(
-        <>
-        {/* <div className='col-lg-6 col-md-12' key={slider.id}>
-            <div>
-       <div dangerouslySetInnerHTML={{ __html: slider.content.rendered }} />
-       </div>
-       <p dangerouslySetInnerHTML={{ __html: slider.excerpt.rendered }} />
-       <div>
-        
-       </div>
-       </div> */}
-        <div key={slider.id} >
-            <div dangerouslySetInnerHTML={{ __html: slider.content.rendered }}/>
-        </div>
-        </>
-    ))
-   }
-   </div>
-   </div>
-   </section>
-   </>
-  )
-}
+    <Carousel>
+      {pages.map((page) => (
+        <Carousel.Item key={page.id}>
+          <div
+            className="n2-section-smartslider fitvidsignore n2_clear"
+            data-ssid="3"
+            tabIndex="0"
+            role="region"
+            aria-label="Slider"
+            dangerouslySetInnerHTML={{ __html: page.content.rendered }}
+          />
+        </Carousel.Item>
+      ))}
+    </Carousel>
+  );
+};
 
-export default Slider
+export default Slider;
