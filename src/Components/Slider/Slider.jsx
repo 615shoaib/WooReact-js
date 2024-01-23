@@ -10,7 +10,6 @@ const Slider = () => {
       try {
         const response = await axios.get('http://localhost/wordpress/wp-json/wp/v2/pages');
         setPages(response.data);
-        console.log(response.data)
       } catch (error) {
         console.error('Error fetching pages:', error);
       }

@@ -16,7 +16,6 @@ const Navbar = () => {
     const getPages = async () => {
         try {
             const page = await axios.get(`http://localhost/wordpress/wp-json/wp/v2/pages`);
-            console.log(page.data);
             setData(page.data);
             setLoading(true);
         } catch (error) {

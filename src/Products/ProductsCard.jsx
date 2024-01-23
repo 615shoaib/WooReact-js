@@ -21,7 +21,6 @@ const ProductsCard = () => {
 
             if (Card.ok) {
                 const updateJson = await Card.json()
-                console.log(updateJson)
                 setProducts(updateJson)
             }
         } catch (error) {
