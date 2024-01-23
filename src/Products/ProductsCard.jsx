@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { apikey } from './apikey'
 import { FaEye} from 'react-icons/fa';
 import { IconButton } from '@mui/material';
+import { Link } from "react-router-dom"
 
 const ProductsCard = () => {
     const [products, setProducts] = useState([])
@@ -65,7 +66,9 @@ const ProductsCard = () => {
 
                     </div>
                     <div className='d-flex justify-content-center mb-2'>
+                        <Link to="/moreproducts">
                         <button className='border-0 bg-dark p-2 text-white'>Add More Products</button>
+                        </Link>
                     </div>
                 </div>
             </div>

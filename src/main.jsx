@@ -11,8 +11,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <Api>
     <App />
     </Api>
-    
-    </BrowserRouter>
+     </BrowserRouter>
     
   </React.StrictMode>,
 )
