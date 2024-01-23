@@ -33,7 +33,7 @@ const ProductsCard = () => {
             <div className='container'>
                 <div className='row'>
                     <div className='col-lg-12 '>
-                        <div className='d-flex gap-5 mt-2 ms-5  justify-content-center'>
+                        <div className='d-flex gap-5 mt-2 ms-5  justify-content-center mb-4'>
                             {
                                 Array.isArray(products) && products.map((card) => (
                                     <div className='card border-0' key={card.id}>
@@ -63,6 +63,9 @@ const ProductsCard = () => {
                             }
                         </div>
 
+                    </div>
+                    <div className='d-flex justify-content-center mb-2'>
+                        <button className='border-0 bg-dark p-2 text-white'>Add More Products</button>
                     </div>
                 </div>
             </div>
