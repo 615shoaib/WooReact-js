@@ -1,4 +1,3 @@
-// ProductsDetail.jsx
 import React from 'react';
 import { Drawer, Box } from '@mui/material';
 
@@ -10,7 +9,7 @@ const ProductsDetail = ({ showProducts, setShowProducts, card }) => {
 
     return (
         <Drawer open={showProducts} anchor='right' onClose={handleClose} >
-            <Box sx={{width:"400px",overflow:"hidden"}} >
+            <Box sx={{width:"400px",height:"100vh",position:""}} >
                 {
                     card && (
                         <div className='card border-0 ' key={card.id}>
@@ -48,7 +47,13 @@ const ProductsDetail = ({ showProducts, setShowProducts, card }) => {
                             <div>
                                 <p className='ms-2 fs-5'>${card.price}.00</p>
                             </div>
-                            <p clasname="w-25 mb-5" style={{fontSize:"14px"}} dangerouslySetInnerHTML={{__html : card.short_description}}/>
+                            <p className='ms-2' style={{fontSize:"15px",justifyContent:"center"}} dangerouslySetInnerHTML={{__html : card.short_description}}/>
+                            <button className='border-0 w-50 bg-dark mx-auto p-2 text-white mb-2'>More Option</button>
+                            <p className="ms-2">SKU :{card.sku}</p>
+                            <span className='d-flex ms-2'>
+                            catagory :
+                            <span dangerouslySetInnerHTML={{__html:card.description}} />
+                            </span>
                         </div>
                     )
                 }
