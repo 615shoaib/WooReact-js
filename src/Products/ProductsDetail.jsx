@@ -1,5 +1,6 @@
 import React from 'react';
 import { Drawer, Box } from '@mui/material';
+import { Link } from 'react-router-dom';
 
 const ProductsDetail = ({ showProducts, setShowProducts, card }) => {
     console.log(card)
@@ -48,13 +49,18 @@ const ProductsDetail = ({ showProducts, setShowProducts, card }) => {
                                 <p className='ms-2 fs-5'>${card.price}.00</p>
                             </div>
                             <p className='ms-2' style={{ fontSize: "15px", justifyContent: "center" }} dangerouslySetInnerHTML={{ __html: card.short_description }} />
-                            <button className='border-0 w-50 bg-dark mx-auto p-2 text-white mb-2'>More Option</button>
+                            <button className='border-0 w-50 bg-dark mx-auto p-2 text-white mb-2'>
+                            <Link to="/option" className='text-white fs-5'>
+                                More Option
+                                </Link>
+                                </button>
+                            
                             <p className="ms-2">SKU :{card.sku}</p>
                             <span className='d-flex ms-2'>
                                 catagory :
                                 <span dangerouslySetInnerHTML={{ __html: card.description }} />
                             </span>
-
+                            <p>{card.attributes}</p>
                         </div>
                     )
                 }
