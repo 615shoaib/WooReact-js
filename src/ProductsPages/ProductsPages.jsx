@@ -1,6 +1,6 @@
 // products components
 
-import MoreProducts from "../Products/MoreProducts";
+import MoreProducts from "../Products/MoreProducts/MoreProducts";
 import WooCommerceExample from "../Products/WoocommerceApi";
 
 import {Routes,Route} from "react-router-dom"
@@ -11,7 +11,7 @@ const ProductsPages = () => {
    
     <Routes>
       <Route path="/" element={ <WooCommerceExample />}/>
-      <Route path="/moreproducts" element={ <MoreProducts />} />
+      <Route path="/moreproducts" element={ <MoreProducts/>} />
     </Routes>
    
     </>

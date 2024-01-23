@@ -5,9 +5,7 @@ const MoreProducts = () => {
     <div className='container'>
       <div className='row'>
         <div className='col-lg-12'>
-
-        
-      MoreProducts
+    MoreProducts
       </div>
       </div>
       </div>
