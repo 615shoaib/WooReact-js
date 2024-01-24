@@ -154,7 +154,16 @@ li{
     overflow: hidden;
 }
 
-.carousel-item img {
+.carousel-item #img {
     width: 100%;
     height: auto;
+}
+.carousel-indicators button{
+    display: none;
+}
+#price{
+    letter-spacing: 2px;
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
 }

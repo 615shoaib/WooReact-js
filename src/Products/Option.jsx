@@ -1,11 +1,10 @@
-
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { apikey } from './apikey';
+import SelectOption from './SelectOption';
 
 const Option = () => {
     const { productId } = useParams();
-
     const [productDetails, setProductDetails] = useState(null);
 
     useEffect(() => {
@@ -14,7 +13,6 @@ const Option = () => {
                 const response = await fetch(`https://localhost/wordpress/wp-json/wc/v3/products/${productId}`, {
                     method: 'GET',
                     headers: {
-
                         'Authorization': `Basic ${apikey()}`,
                         'Content-Type': 'application/json',
                     },
@@ -37,46 +35,62 @@ const Option = () => {
 
     return (
         <>
-            <span>Id :{productId}</span>
-            <div className='container'>
-                <div className='row'>
-                    <div className='col-lg-12'>
-
-
-                        {productDetails &&
-                            <>
-                                <h1>{productDetails.name}</h1>
-                                <div className=' card  border-0' style={{width:"30%"}}>
-                                    <div id="carouselExampleControls" className="carousel slide" data-bs-ride="carousel">
-                                        <div className="carousel-inner">
-                                            {productDetails.images && productDetails.images.length > 0 ? (
-                                                productDetails.images.map((image, index) => (
-                                                    <div className={`carousel-item ${index === 0 ? 'active' : ''}`} key={index}>
-                                                        {image && image.src && (
-                                                            <img id='img' src={image.src} alt={`products-card-${index}`}  />
-                                                        )}
-                                                    </div>
-                                                ))
-                                            ) : (
-                                                <div className="carousel-item active">
-
-                                                    <p>No images available</p>
+            <span>Id: {productId}</span>
+            <div className='container d-flex'>
+                <div className='row align-items-center'>
+                    {productDetails && (
+                        <>
+                            <div className='col-lg-4'>
+                                <h1 className='text-center'>{productDetails.name}</h1>
+                                <div id='carouselExampleControls' className='carousel slide' data-bs-ride='carousel'>
+                                    <div className='carousel-inner'>
+                                        {productDetails.images && productDetails.images.length > 0 ? (
+                                            productDetails.images.map((image, index) => (
+                                                <div className={`carousel-item ${index === 0 ? 'active' : ''}`} key={index}>
+                                                    {image && image.src && (
+                                                        <img id='img' src={image.src} alt={`products-card-${index}`} className='d-block w-100' />
+                                                    )}
                                                 </div>
-                                            )}
-                                        </div>
-                                        <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-                                            <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-                                            <span className="visually-hidden">Previous</span>
-                                        </button>
-                                        <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-                                            <span className="carousel-control-next-icon" aria-hidden="true"></span>
-                                            <span className="visually-hidden bg-info">Next</span>
-                                        </button>
+                                            ))
+                                        ) : (
+                                            <div className='carousel-item active'>
+                                                <p>No images available</p>
+                                            </div>
+                                        )}
                                     </div>
+
+                                    <div className='carousel-indicators'>
+                                        {productDetails.images &&
+                                            productDetails.images.map((_, index) => (
+                                                <button
+                                                    key={index}
+                                                    type='button'
+                                                    data-bs-target='#carouselExampleControls'
+                                                    data-bs-slide-to={index}
+                                                    className={index === 0 ? 'active' : ''}
+                                                    aria-current={index === 0 ? 'true' : 'false'}
+                                                ></button>
+                                            ))}
+                                    </div>
+
+                                    <button className='carousel-control-prev' type='button' data-bs-target='#carouselExampleControls' data-bs-slide='prev'>
+                                        <span className='carousel-control-prev-icon' aria-hidden='true'></span>
+                                        <span className='visually-hidden'>Previous</span>
+                                    </button>
+                                    <button className='carousel-control-next' type='button' data-bs-target='#carouselExampleControls' data-bs-slide='next'>
+                                        <span className='carousel-control-next-icon' aria-hidden='true'></span>
+                                        <span className='visually-hidden'>Next</span>
+                                    </button>
                                 </div>
-                            </>
-                        }
-                    </div>
+                            </div>
+
+                            <div className='col-lg-6'>
+                                <h5 id='price'>${productDetails.price}.00</h5>
+                                <p dangerouslySetInnerHTML={{ __html: productDetails.short_description }} />
+                               <SelectOption productDetails={productDetails}/>
+                            </div>
+                        </>
+                    )}
                 </div>
             </div>
         </>
