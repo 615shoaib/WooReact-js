@@ -20,7 +20,6 @@ const Option = () => {
 
                 if (response.ok) {
                     const product = await response.json();
-                    console.log(product)
                     setProductDetails(product);
                 } else {
                     console.error('Failed to fetch product details:', response.status);
@@ -40,7 +39,7 @@ const Option = () => {
                 <div className='row align-items-center'>
                     {productDetails && (
                         <>
-                            <div className='col-lg-4'>
+                            <div className='col-lg-5'>
                                 <h1 className='text-center'>{productDetails.name}</h1>
                                 <div id='carouselExampleControls' className='carousel slide' data-bs-ride='carousel'>
                                     <div className='carousel-inner'>
@@ -48,7 +47,7 @@ const Option = () => {
                                             productDetails.images.map((image, index) => (
                                                 <div className={`carousel-item ${index === 0 ? 'active' : ''}`} key={index}>
                                                     {image && image.src && (
-                                                        <img id='img' src={image.src} alt={`products-card-${index}`} className='d-block w-100' />
+                                                        <img src={image.src} alt={`products-card-${index}`} className='d-block w-100' />
                                                     )}
                                                 </div>
                                             ))
@@ -61,7 +60,7 @@ const Option = () => {
 
                                     <div className='carousel-indicators'>
                                         {productDetails.images &&
-                                            productDetails.images.map((_, index) => (
+                                            productDetails.images.map((image, index) => (
                                                 <button
                                                     key={index}
                                                     type='button'
@@ -69,7 +68,9 @@ const Option = () => {
                                                     data-bs-slide-to={index}
                                                     className={index === 0 ? 'active' : ''}
                                                     aria-current={index === 0 ? 'true' : 'false'}
-                                                ></button>
+                                                >
+                                                    <img src={image.src} alt={`indicator-${index}`} className='d-block w-100' />
+                                                </button>
                                             ))}
                                     </div>
 
@@ -84,10 +85,10 @@ const Option = () => {
                                 </div>
                             </div>
 
-                            <div className='col-lg-6'>
+                            <div className='col-lg-7'>
                                 <h5 id='price'>${productDetails.price}.00</h5>
                                 <p dangerouslySetInnerHTML={{ __html: productDetails.short_description }} />
-                               <SelectOption productDetails={productDetails}/>
+                                <SelectOption productDetails={productDetails} />
                             </div>
                         </>
                     )}

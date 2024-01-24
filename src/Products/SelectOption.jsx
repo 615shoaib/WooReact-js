@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 
 const SelectOption = ({ productDetails }) => {
-  const [selectedOptions, setSelectedOptions] = useState({});
+  const [selectedOptions, setSelectedOptions] = useState({} );
+  console.log(selectedOptions)
 
   const handleOptionChange = (attributeName, selectedOption) => {
     setSelectedOptions({
@@ -9,6 +10,7 @@ const SelectOption = ({ productDetails }) => {
       [attributeName]: selectedOption,
     });
   };
+
 
   const isAddToCartEnabled =
     Object.keys(productDetails.attributes).every(
