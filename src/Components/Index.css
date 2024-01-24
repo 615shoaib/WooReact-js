@@ -54,8 +54,8 @@ h2{
     position: absolute;
     justify-content: center;
     color: #B3B3B3;
-    opacity: 0; /* Start with opacity 0 to make it fade in */
-    animation: animateText 0.5s ease forwards; /* Adjust the animation duration as needed */
+    opacity: 0;
+    animation: animateText 0.5s ease forwards;
 }
 
 @keyframes animateText {
@@ -144,4 +144,17 @@ li{
 .icon {
       color: #fff;
   font-size: 18px;
+}
+.carousel-item {
+    transition: all 0.8s linear;
+}
+
+.carousel-item:hover {
+    transform: scale(1.1);
+    overflow: hidden;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: auto;
 }

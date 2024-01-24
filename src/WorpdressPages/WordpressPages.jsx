@@ -5,9 +5,10 @@ import { Routes,Route } from "react-router-dom"
 const WordpressPages =()=>{
     return(
         <>
-       <Sidebar />
+       
        <Routes>
-        <Route path="/" element={ <Slider />}/>
+        <Route  index element={<Sidebar />} />
+        <Route  path="/"  element={ <Slider />}/>
        </Routes>
       
         </>
