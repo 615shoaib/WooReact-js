@@ -37,7 +37,7 @@ const Option = () => {
         <div>
           
             {productDetails && (
-                <div>
+                <div className='text-center'>
                     <h2>{productDetails.name}</h2>
                 </div>
             )}
