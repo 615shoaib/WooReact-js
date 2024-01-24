@@ -3,7 +3,7 @@ import { Drawer, Box } from '@mui/material';
 import { Link } from 'react-router-dom';
 
 const ProductsDetail = ({ showProducts, setShowProducts, card }) => {
-    console.log(card)
+    // console.log(card)
     const handleClose = () => {
         setShowProducts(false);
     };
@@ -50,7 +50,7 @@ const ProductsDetail = ({ showProducts, setShowProducts, card }) => {
                             </div>
                             <p className='ms-2' style={{ fontSize: "15px", justifyContent: "center" }} dangerouslySetInnerHTML={{ __html: card.short_description }} />
                             <button className='border-0 w-50 bg-dark mx-auto p-2 text-white mb-2'>
-                            <Link to="/option" className='text-white fs-5'>
+                            <Link to={`/option/${card.id}`} className='text-white fs-5'>
                                 More Option
                                 </Link>
                                 </button>
@@ -60,7 +60,6 @@ const ProductsDetail = ({ showProducts, setShowProducts, card }) => {
                                 catagory :
                                 <span dangerouslySetInnerHTML={{ __html: card.description }} />
                             </span>
-                            <p>{card.attributes}</p>
                         </div>
                     )
                 }
