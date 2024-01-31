@@ -1,6 +1,8 @@
 import WordpressPages from "./WorpdressPages/WordpressPages"
 import ProductsPages from "./ProductsPages/ProductsPages"
 
+// import Demo from "./Demo/Demo"
+
 
 function App() {
  return (
@@ -8,8 +10,8 @@ function App() {
     <div className="">
     <WordpressPages />
     <ProductsPages />
-    </div>
-    </>
+     </div>
+   </>
   )
 }
 

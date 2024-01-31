@@ -20,6 +20,7 @@ const Option = () => {
 
                 if (response.ok) {
                     const product = await response.json();
+                    console.log(product)
                     setProductDetails(product);
                 } else {
                     console.error('Failed to fetch product details:', response.status);
