@@ -4,6 +4,7 @@ import EyeIcone from "../EyeIcone";
 import AddToCart from "../AddToCart";
 
 const MoreProducts = ({card}) => {
+  console.log(card)
   const { products } = useContext(AppPrvoider);
   return (
     <>
