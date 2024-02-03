@@ -4,8 +4,7 @@ import ProductsCard from "./ProductsCard";
 import { NavLink ,Link} from "react-router-dom";
 import {AppPrvoider} from "../Components/ContentApi/Api"
 
-
-
+import "../index.css"
 
 
 const WooCommerceExample = () => {
@@ -24,7 +23,7 @@ const WooCommerceExample = () => {
 
   return (
     <>
-     <div className="container">
+      <div className="container">
         <div className="row">
           <div className="col-lg-12 pt-5 mt-5 ">
             <div className="d-flex justify-content-center flex-column text-center ">
@@ -35,9 +34,16 @@ const WooCommerceExample = () => {
             </div>
             <div className="d-flex justify-content-center ">
               {uniqueCategories.map((category, index) => (
-                <Link key={index} to={`/category/${category}`} style={{ paddingRight: "20px" }} className='mb-5'>
+                <NavLink
+                  key={index}
+                  to={`/category/${category}`}
+                  style={{ paddingRight: "20px" }}
+                  className='mb-5 active'
+
+                 
+                >
                   {category}
-                </Link>
+                </NavLink>
               ))}
             </div>
             <ProductsCard />
