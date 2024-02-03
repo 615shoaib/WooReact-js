@@ -1,11 +1,10 @@
 import { useContext } from "react";
 import { useState, useEffect } from "react";
 import ProductsCard from "./ProductsCard";
-import { NavLink ,Link} from "react-router-dom";
-import {AppPrvoider} from "../Components/ContentApi/Api"
+import { NavLink, Link } from "react-router-dom";
+import { AppPrvoider } from "../Components/ContentApi/Api";
 
-import "../index.css"
-
+import "../index.css";
 
 const WooCommerceExample = () => {
   const { products } = useContext(AppPrvoider);
@@ -29,7 +28,8 @@ const WooCommerceExample = () => {
             <div className="d-flex justify-content-center flex-column text-center ">
               <h1 className="products-heading mb-3">FEATURED PRODUCTS</h1>
               <div className="para">
-                Lorem ipsum dolor sit amet, consectetur, sed do eiusmod tempor incididunt labore dolore.
+                Lorem ipsum dolor sit amet, consectetur, sed do eiusmod tempor
+                incididunt labore dolore.
               </div>
             </div>
             <div className="d-flex justify-content-center ">
@@ -38,9 +38,7 @@ const WooCommerceExample = () => {
                   key={index}
                   to={`/category/${category}`}
                   style={{ paddingRight: "20px" }}
-                  className='mb-5 active'
-
-                 
+                  className="mb-5"
                 >
                   {category}
                 </NavLink>
