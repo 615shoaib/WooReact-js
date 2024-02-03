@@ -1,9 +1,15 @@
+import { useContext } from "react"
 import { useEffect } from "react"
 import { useState } from "react"
 import ProductsCard from "./ProductsCard"
+import {NavLink} from "react-router-dom"
+import {AppPrvoider} from "../Components/ContentApi/Api"
 
 const WooCommerceExample = () =>{
   
+  const { products} = useContext(AppPrvoider)
+  console.log(products)
+
   return(
     <>
     <div className="container">
@@ -18,6 +24,7 @@ const WooCommerceExample = () =>{
            </div>
          
         
+
     <ProductsCard />
     </div>
       </div>
