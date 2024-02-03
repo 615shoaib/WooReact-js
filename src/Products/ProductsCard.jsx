@@ -7,7 +7,7 @@ import AddToCart from './AddToCart';
 import { AppPrvoider } from '../Components/ContentApi/Api';
 
 const ProductsCard = () => {
-    const { products, setProducts } = useContext(AppPrvoider);
+    const { products } = useContext(AppPrvoider);
 
  
     const homePageProducts = products.slice(0, 5);
