@@ -8,7 +8,6 @@ section{
         display: flex;
         justify-content: center;
         align-items: center;
-        /* width: 100vw; */
         height: 600px;
      background-color: #68666613;
   
@@ -26,11 +25,9 @@ section{
     margin-left: -122px;
 }
 h2{
-    /* font-family: inherit !important; */
     font-size: 34px !important;
     color: #222222 !important;
     width: 55% !important;
-    /* font-weight: 300 !important; */
     white-space: pre-wrap;
     text-transform: uppercase;
     line-height: 44px !important;
@@ -48,7 +45,6 @@ h2{
     width: 50%;
     font-family: 'Roboto', sans-serif;
     font-weight: 700;
-    /* margin-top: 40%; */
     display: flex;
     top: 45%;
     position: absolute;
@@ -142,7 +138,7 @@ li{
 }
 
 .icon {
-      color: #fff;
+  color: #fff;
   font-size: 18px;
 }
 .carousel-item {

@@ -36,7 +36,7 @@ const WooCommerceExample = () => {
               {uniqueCategories.map((category, index) => (
                 <NavLink
                   key={index}
-                  to={`/category/${category}`}
+                  to='/category'
                   style={{ paddingRight: "20px" }}
                   className="mb-5"
                 >
