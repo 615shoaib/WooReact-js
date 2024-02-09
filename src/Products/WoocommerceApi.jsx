@@ -1,10 +1,10 @@
 import { useContext } from "react";
 import { useState, useEffect } from "react";
-import ProductsCard from "./ProductsCard";
 import { NavLink, Link } from "react-router-dom";
 import { AppPrvoider } from "../Components/ContentApi/Api";
 
 import "../index.css";
+import ProductsCard from "./ProductsCard";
 
 const WooCommerceExample = () => {
   const { products } = useContext(AppPrvoider);
@@ -32,19 +32,19 @@ const WooCommerceExample = () => {
                 incididunt labore dolore.
               </div>
             </div>
-            <div className="d-flex justify-content-center ">
+            <div className="d-flex  justify-content-center gap-5">
               {uniqueCategories.map((category, index) => (
                 <NavLink
                   key={index}
-                  to='/category'
-                  style={{ paddingRight: "20px" }}
+                  to={`/category/${category}`}
+                
                   className="mb-5"
                 >
-                  {category}
+                {category}
                 </NavLink>
               ))}
+              
             </div>
-            <ProductsCard />
           </div>
         </div>
       </div>

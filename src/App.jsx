@@ -7,10 +7,9 @@ import ProductsPages from "./ProductsPages/ProductsPages"
 function App() {
  return (
     <>
-    <div className="">
     <WordpressPages />
     <ProductsPages />
-     </div>
+
    </>
   )
 }

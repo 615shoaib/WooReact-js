@@ -1,18 +1,11 @@
-import Sidebar from "../Components/Sidebar"
-import Slider from "../Components/Slider/Slider"
-import { Routes,Route } from "react-router-dom"
+import Sidebar from "../Components/Sidebar";
 
-const WordpressPages =()=>{
-    return(
-        <>
-       
-       <Routes>
-        <Route  index element={<Sidebar />} />
-        <Route  path="/"  element={ <Slider />}/>
-       </Routes>
-      
-        </>
-    )
-}
+const WordpressPages = () => {
+  return (
+    <>
+      <Sidebar />
+    </>
+  );
+};
 
-export default WordpressPages
+export default WordpressPages;

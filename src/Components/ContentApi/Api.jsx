@@ -38,7 +38,7 @@ const Api =({children})=>{
             isOpen,
             setIsOpen,
             products,
-            setProducts
+            setProducts,
         }}>
             {children}
         </AppPrvoider.Provider>
