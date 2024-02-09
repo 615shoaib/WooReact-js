@@ -33,7 +33,7 @@ const ProductsCard = ({products,category}) => {
                </div>
             </div>
             <div className='d-flex justify-content-center mb-2'>
-               <Link to="/moreproducts">
+               <Link to="/more-products">
                   <button className='border-0 bg-dark p-2 text-white'>Add More Products</button>
                </Link>
             </div>

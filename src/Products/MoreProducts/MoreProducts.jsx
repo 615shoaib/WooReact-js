@@ -10,6 +10,7 @@ const MoreProducts = ({card}) => {
     <>
       <div className="container">
         <div className="row">
+          
         <FilterProducts />
           {products.map((detail) => (
             <>
