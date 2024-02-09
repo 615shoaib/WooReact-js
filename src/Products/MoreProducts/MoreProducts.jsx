@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { AppPrvoider } from "../../Components/ContentApi/Api";
 import EyeIcone from "../EyeIcone";
 import AddToCart from "../AddToCart";
-
+import FilterProducts from "../FilterProducts/FilterProducts"
 const MoreProducts = ({card}) => {
   console.log(card)
   const { products } = useContext(AppPrvoider);
@@ -10,6 +10,7 @@ const MoreProducts = ({card}) => {
     <>
       <div className="container">
         <div className="row">
+        <FilterProducts />
           {products.map((detail) => (
             <>
               <div className="col-lg-4 d-flex justify-content-center">
