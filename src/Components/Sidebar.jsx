@@ -1,7 +1,7 @@
 // Sidebar.jsx
 import React from 'react';
 import Menu from './Menu';
-import Cart from './Cart';
+import Cart from './AddTocard/Cart';
 import "./Index.css"
 
 

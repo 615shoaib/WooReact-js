@@ -4,7 +4,7 @@ import React from 'react'
 const AddToCart = () => {
     return (
         <>
-            <IconButton className='text-white ps-2'>
+            <IconButton className='text-dark ps-2'>
                 <svg className='icon' xmlns="http://www.w3.org/2000/svg"
                     width="1.2em"
                     height="1.2em"

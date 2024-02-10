@@ -11,10 +11,10 @@ const HomeProducts = ({ products }) => {
         return false;
     });
 
-    console.log(filteredProducts); 
 
     return (
         <>
+        
             <div className="d-flex text-center justify-content-center align-items-center flex-direction-column">
                
             {Array.isArray(filteredProducts) && filteredProducts.map((card) => (
