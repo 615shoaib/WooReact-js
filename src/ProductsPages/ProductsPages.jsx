@@ -4,16 +4,18 @@ import MoreProducts from "../Products/MoreProducts/MoreProducts";
 import Option from "../Products/Option";
 import ProductsCardWrapped from "../Products/ProductsCardWrapped";
 import WooCommerceExample from "../Products/WoocommerceApi";
-import HomeProducts from "../Products/HomeProducts"; // Import HomeProducts component
 
 const ProductsPages = () => {
   return (
-    <Routes>
-      <Route path="/" element={<WooCommerceExample />} />
+    <>
+    
+    <Routes>  
+      <Route path='/' element={<WooCommerceExample />} />
       <Route path="/more-products" element={<MoreProducts />} />
       <Route path="/option/:productId" element={<Option />} />
       <Route path="/category/:categoryName" element={<ProductsCardWrapped />} />
     </Routes>
+    </>
   );
 }
 

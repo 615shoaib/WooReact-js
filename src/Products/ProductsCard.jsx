@@ -3,8 +3,8 @@ import EyeIcone from './EyeIcone';
 import AddToCart from './AddToCart';
 
 
-const ProductsCard = ({products,category}) => {
- 
+const ProductsCard = ({ products, category }) => {
+
  
    const homapage = Array.isArray(products) ? products.slice(0, 5) : [];
    

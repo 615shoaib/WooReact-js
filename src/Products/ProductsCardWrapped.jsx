@@ -1,32 +1,50 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
+import { AppPrvoider } from '../Components/ContentApi/Api';
+import Category from './Category';
 import ProductsCard from './ProductsCard';
-import { useParams } from "react-router-dom";
-import { AppPrvoider } from "../../src/Components/ContentApi/Api"; 
-import WooCommerceExample from './WoocommerceApi';
 
-const ProductsCardWrapped = () => {
-    const { categoryName } = useParams(); 
-    const [products, setProducts] = useState([]);
-    const { products: allProducts } = useContext(AppPrvoider); 
+const WooCommerceExample = () => {
+  const { products } = useContext(AppPrvoider);
+  const { categoryName } = useParams();
+  const [activeCategory, setActiveCategory] = useState(null);
+  const [filteredProducts, setFilteredProducts] = useState([]);
 
-    useEffect(() => {
-        const filteredProducts = allProducts.filter(product => 
-            product.categories ? product.categories.some(cat => cat.name === categoryName) : false
-        );
-        setProducts(filteredProducts);
-    }, [allProducts, categoryName]);
-
-    // Conditionally render HomeProducts if categoryName is not present
-    if (typeof categoryName === 'undefined') {
-        return null; // Return null to hide HomeProducts
+  useEffect(() => {
+    if (categoryName) {
+      setActiveCategory(categoryName);
+    } else {
+      setActiveCategory(null);
     }
+  }, [categoryName]);
 
-    return (
-        <>
-            <WooCommerceExample />
-            <ProductsCard category={categoryName} products={products} /> 
-        </>
-    );
-}
+  useEffect(() => {
+    if (activeCategory) {
+      const filteredProducts = products.filter((product) =>
+        product.categories.some((cat) => cat.name === activeCategory)
+      );
+      setFilteredProducts(filteredProducts);
+    } else {
+      setFilteredProducts(products);
+    }
+  }, [products, activeCategory]);
 
-export default ProductsCardWrapped;
+  const handleSelectCategory = (category) => {
+    setActiveCategory(category);
+  };
+
+  return (
+    <>
+      <div className="container">
+        <div className="row">
+          <div className="col-lg-12 pt-5 mt-5 ">
+            <Category products={products} activeCategory={activeCategory} onSelectCategory={handleSelectCategory} />
+            <ProductsCard category={categoryName} products={filteredProducts} />
+          </div>
+        </div>
+      </div>
+    </>
+  );
+};
+
+export default WooCommerceExample;
