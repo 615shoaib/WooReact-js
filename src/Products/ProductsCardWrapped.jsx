@@ -1,4 +1,3 @@
-// ProductsCardWrapped.jsx
 import React, { useContext, useEffect, useState } from 'react';
 import ProductsCard from './ProductsCard';
 import { useParams } from "react-router-dom";
@@ -11,18 +10,21 @@ const ProductsCardWrapped = () => {
     const { products: allProducts } = useContext(AppPrvoider); 
 
     useEffect(() => {
-      
         const filteredProducts = allProducts.filter(product => 
             product.categories ? product.categories.some(cat => cat.name === categoryName) : false
         );
-       
         setProducts(filteredProducts);
     }, [allProducts, categoryName]);
 
+    // Conditionally render HomeProducts if categoryName is not present
+    if (typeof categoryName === 'undefined') {
+        return null; // Return null to hide HomeProducts
+    }
+
     return (
         <>
-        <WooCommerceExample />
-        <ProductsCard category={categoryName} products={products} /> 
+            <WooCommerceExample />
+            <ProductsCard category={categoryName} products={products} /> 
         </>
     );
 }

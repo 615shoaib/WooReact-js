@@ -7,10 +7,14 @@ const HomeProducts = ({ products }) => {
         product.categories ? product.categories.some(cat => cat.name === "NEW ARRIVALS") : false
     );
 
-    console.log(filterData);
+  
 
     return (
-        <div>HomeProducts</div>
+        <>
+        <div className="d-flex text-center justify-content-center align-items-center flex-direction-column">
+        <h1 className='bg-info'>Hy</h1>
+        </div>
+        </>
     );
 }
 

@@ -4,6 +4,7 @@ import MoreProducts from "../Products/MoreProducts/MoreProducts";
 import Option from "../Products/Option";
 import ProductsCardWrapped from "../Products/ProductsCardWrapped";
 import WooCommerceExample from "../Products/WoocommerceApi";
+import HomeProducts from "../Products/HomeProducts"; // Import HomeProducts component
 
 const ProductsPages = () => {
   return (
