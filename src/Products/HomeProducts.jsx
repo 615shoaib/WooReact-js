@@ -1,11 +1,12 @@
 import React from 'react';
 import EyeIcone from './EyeIcone';
 import AddToCart from './AddToCart';
+import { NavLink } from 'react-router-dom';
 
 const HomeProducts = ({ products }) => {
     const filteredProducts = products.filter((product) => {
         if (product.categories && product.categories.length > 0) {
-            return product.categories.some((category) => category.name === "LAST MINUTE");
+            return product.categories.some((category) => category.name === "PROMOTED");
         }
         return false;
     });
@@ -33,6 +34,12 @@ const HomeProducts = ({ products }) => {
                         <p className='text-center' style={{ marginTop: "-25px" }}>${card.price}.00</p>
                      </div>
                   ))}
+                  
+            </div>
+            <div className='text-center mb-2 '>
+            <NavLink to="/more-products">
+            <button className='border-0 bg-dark text-white ps-5 px-5'>Add More Products</button>
+            </NavLink>
             </div>
         </>
     );
