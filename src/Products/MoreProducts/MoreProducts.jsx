@@ -10,7 +10,7 @@ const MoreProducts = ({card}) => {
     <>
       <div className="container">
         <div className="row">
-          
+
         <FilterProducts />
           {products.map((detail) => (
             <>
@@ -28,7 +28,7 @@ const MoreProducts = ({card}) => {
                       <EyeIcone card={card} />
                       <AddToCart />
                     </div>
-                  </div>
+                  </div> 
 
                   <p className="text-center">{`Dress ${detail.name}`}</p>
                   <p

@@ -4,7 +4,7 @@ import { NavLink, Link } from "react-router-dom";
 import { AppPrvoider } from "../Components/ContentApi/Api";
 
 import "../index.css";
-import ProductsCard from "./ProductsCard";
+import HomeProducts from "./MoreProducts/HomeProducts";
 
 const WooCommerceExample = () => {
   const { products } = useContext(AppPrvoider);
@@ -43,7 +43,15 @@ const WooCommerceExample = () => {
                 {category}
                 </NavLink>
               ))}
-              
+             
+            </div>
+            <div>
+              <HomeProducts products={products}/>
+              </div>
+                 <div className='d-flex justify-content-center mb-2'>
+               <Link to="/more-products">
+                  <button className='border-0 bg-dark p-2 text-white'>Add More Products</button>
+               </Link>
             </div>
           </div>
         </div>
