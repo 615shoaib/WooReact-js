@@ -6,6 +6,7 @@ export const AppPrvoider = createContext(null);
 const Api = ({ children }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [products, setProducts] = useState([]);
+  const [cart, setCart] = useState([]);
 
   const getCard = async () => {
     try {
@@ -30,8 +31,11 @@ const Api = ({ children }) => {
       }
     } catch (error) {
       console.error("Error fetching data:", error);
-      // Handle error
     }
+  };
+
+  const addToCart = (product) => {
+    setCart([...cart, product]);
   };
 
   useEffect(() => {
@@ -50,6 +54,8 @@ const Api = ({ children }) => {
         setIsOpen,
         products,
         setProducts,
+        cart,
+        addToCart,
       }}
     >
       {children}

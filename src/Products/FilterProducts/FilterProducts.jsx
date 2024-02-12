@@ -1,14 +1,19 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link} from 'react-router-dom';
 
 const FilterProducts = ({ products, setSortedProducts }) => {
+
+
 
     const handleSortChange = (event) => {
         const selectedOption = event.target.value;
         if (selectedOption === 'name') {
             const sortedData = [...products].sort((a, b) => a.name.localeCompare(b.name));
             setSortedProducts(sortedData);
-        } else if (selectedOption === 'price') {
+        }else if(selectedOption === 'description'){
+          const sortedData = [...products].sort((a, b) => a.description.localeCompare(b.description));
+        }
+         else if (selectedOption === 'price') {
             const sortedData = [...products].sort((a, b) => a.price - b.price);
             setSortedProducts(sortedData);
         }else{
@@ -25,6 +30,7 @@ const FilterProducts = ({ products, setSortedProducts }) => {
                 <option value="">--- Select ---</option>
                 <option value="name">Sort by Name</option>
                 <option value="price">Sort by Price</option>
+                <option value="description">Sort by description</option>
             </select>
         </div>
         </div>

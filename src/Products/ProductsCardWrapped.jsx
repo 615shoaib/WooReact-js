@@ -3,14 +3,15 @@ import { useParams } from 'react-router-dom';
 import { AppPrvoider } from '../Components/ContentApi/Api';
 import Category from './Category';
 import ProductsCard from './ProductsCard';
+import AddToCart from './AddToCart';
 
 const WooCommerceExample = () => {
   const { products } = useContext(AppPrvoider);
   const { categoryName } = useParams();
   const [activeCategory, setActiveCategory] = useState(null);
   const [filteredProducts, setFilteredProducts] = useState([]);
-
-  useEffect(() => {
+ 
+    useEffect(() => {
     if (categoryName) {
       setActiveCategory(categoryName);
     } else {
